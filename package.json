@@ -1,0 +1,21 @@
+{
+  "name": "socialcopstask",
+  "version": "0.0.1",
+  "description": "notification system task for gossip girl service",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongodb": "^2.2.26",
+    "node-notifier": "^5.1.2",
+    "nodemailer": "^4.0.1",
+    "nodemon": "^1.11.0",
+    "twilio": "^2.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anubhav Mishra",
+  "license": "ISC"
+}

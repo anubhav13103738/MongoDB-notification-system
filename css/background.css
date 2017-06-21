@@ -1,0 +1,9 @@
+body{
+    background-image: url("../images/black.jpg");
+}
+
+h1{
+    color: darkgrey;
+    margin-bottom: 250px;
+    margin-top: 40px;
+}

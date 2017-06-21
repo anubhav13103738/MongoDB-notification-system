@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Some Character Data</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/background.css">
+    <script src="libs/angular.min%20.js"></script>
+    <script src="js/dropapp.js"></script>
+    <script src="js/dropappctrl.js"></script>
+    <script src="js/dropappfactory.js"></script>
+</head>
+<body align="center">
+<h1>Enter Any character in Character Collection</h1>
+<form action="updated" method="post">
+<div ng-app="dropApp" ng-controller="dropctrl">
+    <br>
+    <span style="color: darkgrey;">Character you would like to update:</span>
+    <select name="character" id="character">
+        <option>select</option>
+        <option ng-repeat="x in characters" name="chara" value="{{x.name}}">{{x.name}}</option>
+    </select>
+</div>
+    <br><span style="color: darkgrey;">Update Actor name(leave blank if don't wish to update):</span><input type="text" name="actor" placeholder="Currently played by">
+    <br><br><span style="color: darkgrey;">Update Description(leave blank if don't wish to update):</span><input type="text" name="description" placeholder="update description">
+    <br><br><span style="color: darkgrey;">Add another field for selected character (leave blank if don't wish to update):</span><input type="text" name="key" placeholder="Key of Attribute"><input type="text" name="value" placeholder="value of attribute">
+    <br><br><input type="submit" value="update">
+
+</form>
+</body>
+</html>

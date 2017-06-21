@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Subscribe database Service</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/background.css">
+    <script src="libs/angular.min%20.js"></script>
+    <script src="js/dropapp.js"></script>
+    <script src="js/dropappctrl.js"></script>
+    <script src="js/dropappfactory.js"></script>
+    <script type="text/javascript">
+        function charact(val){
+            var element=document.getElementById('chara');
+            if(val=='other')
+                element.style.display='inline-block';
+            else
+                element.style.display='none';
+        }
+
+    </script>
+</head>
+<body align="center">
+<h1>Get Updates of all the characters in Gossip Girl if the database relating to them is modified</h1>
+<form action="subscribed" method="post">
+    <input type="email" placeholder="Enter Email Id" name="eMail" id="eMail">
+    <input title="enter phone number such that it is 10 digit greater than 7000000000 and less than 9999999999" type="number" placeholder="Enter Mob. No." name="mob" id="mob" minlength="10" maxlength="10" min="7000000000" max="9999999999">
+    <br>
+<span style="color: darkgrey; margin-left: 650px;"> </span>
+    <div ng-app="dropApp" ng-controller="dropctrl">
+        <br>
+          <span style="color: darkgrey;">Character you would like to follow:</span>
+            <select name="character" id="character" onchange='charact(this.value);'>
+                <option>select</option>
+                <option ng-repeat="x in characters" name="chara" value="{{x.name}}">{{x.name}}</option>
+                <option value="other">other</option>
+            </select>
+        <input type="text" name="character1" id="chara" placeholder="please specify" style='display:none;'/>
+    </div>
+<br>
+    <input type="submit" value="Subscribe">
+
+</form>
+</body>
+</html>
