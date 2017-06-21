@@ -8,6 +8,8 @@ Steps to use the code:
 Note: please enter phone number such that it is 10 digit greater than 7000000000 and less than 9999999999 
 
 6.	You can either subscribe or use crud(create,read,update,delete) operations in this application and whenever there is any change in characters collection present in mongodb database it will notify the user in the form of mail(subscribed users), desktop notifications and sms(twilio doesn’t send sms to unverified number that is why the sms code is commented in this one but it does work and as a proof I’ll be attaching a screenshot when I used the twilio library). I will recommend to subscribe first with a valid mail id(these will be added to subscribers collection of our mongodb database) to receive mails as notifications and then perform crud operations. With various update the subscribed users who are subscribed to that particular character but in the case of insertion all the subscribed user will get a mail and notification that a new character has been added to database.
+
+
 Write Up:
 Note: Your system must have node.js installed
 This task was to develop a notification system which will provide updates when a database operation is performed on a particular collection.
@@ -19,7 +21,6 @@ Now notification can be of several types. In this task I have used 3 types of no
 3.	Sms
 Sms is not working because I have used twilio module for the same and twilio doesn’t allow sending sms to unverified numbers for free users but the code is commented and is working for the same.
  
-The above message came up when I used the sms code. It isn’t working for free users so I have it in comments but will work if some subscription is purchased or number is verified.
 
 Approach:
 First thing that came to my mind after reading the problem statement was to create a mongodb database with collection of characters and a little details about them and collection of subscriber which will store mail id, subscribed characters and phone numbers. Characters collection will store name, actor and description. And I made this on mlabs.com so it can be accessed from anywhere.
