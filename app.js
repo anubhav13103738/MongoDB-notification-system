@@ -25,7 +25,7 @@ var transporter =  nodemailer.createTransport({
     secure:false,
     port:25,
     auth:{
-        user:'mishra.annu1234@gmail.com',
+        user:process.env.MAILEREMAIL,
         pass: config.password
     },
     tls:{
@@ -34,7 +34,7 @@ var transporter =  nodemailer.createTransport({
 });
 
 var helperoptions ={
-    from:'"Anubhav Mishra" <mishra.annu1234@gmail.com',
+    from:'"Sender" <'+process.env.MAILEREMAIL+'>',
     to:'',
     subject:'',
     text:''
@@ -49,7 +49,7 @@ var app = express();
 var bodyParser = require('body-parser');
 var mongoClient = require('mongodb').MongoClient;
 //the following line of code will connect this application to the database which is made on mlab.com who provide free 500mb usage
-mongoClient.connect('mongodb://root:root@ds121091.mlab.com:21091/gossip_girl',(err,database)=>{
+mongoClient.connect(process.env.MONGOURI,(err,database)=>{
     if(err)console.log('can\'t connect '+err);
 else{
 
@@ -149,8 +149,8 @@ db.collection('characters').insertOne(datax, (err,result)=>{
                this is the commented code to send sms using twilio library but it doesn't allow to send sms to unverified number for free users.
                
                client.sendMessage({
-                   to:'+919990431502',
-                   from:'+18136995617',
+                   to:'',// fill in number on which sms is to be sent
+                   from:'', //fill in number from which the sms is to be sent
                    body:'test'
                }, function (err,message) {
                    if(err){console.log(err);}
