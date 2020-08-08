@@ -1,5 +1,5 @@
 {
-  "password":17011995,
+  "password":process.env.MAILERPASSWORD,
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
